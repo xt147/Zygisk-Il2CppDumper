@@ -10,17 +10,17 @@
 建筑:
     runs-on: ubuntu-latest
 步骤:
-    - 用途: actions/checkout@v4
-    - 用途: actions/setup-java@v4
+    - 用途: actions/checkout@v3
+    - 用途: actions/setup-java@v3
 与:
 分布: 铁木林
         java-version: 11
 贮存物: gradle
     - 跑: |
 chmod +x ./gradlew
-sed -i 's/moduleDescription = "/moduleDescription = "(${{ github.event.inputs.package_name }}) /g' module.gradle
-sed -i "s/com.game.packagename/${{ github.event.inputs.package_name }}/g" module/src/main/cpp/game.h
-./gradlew：模块：汇编释放
+sed -i's/moduleDescription = "/moduleDescription = "(${{ github.event.inputs.package_name }}) /g' module.gradle
+sed -i"s/com.game.packagename/${{ github.event.inputs.package_name }}/g" module/src/main/cpp/game.h
+./gradlew:模块你喜欢吗
     - 用途: actions/upload-artifact@v4
 与:
 名字: zygisk-il2cppdumper
